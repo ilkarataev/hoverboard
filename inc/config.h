@@ -91,12 +91,12 @@
 
 #define ADC2_MIN         0        // min ADC2-value while poti at minimum-position (0 - 4095)
 #define ADC2_ZERO        3050        // ADC2-value while poti at zero-position (0 - 4095)200
-#define ADC2_MAX      4095        // max ADC2-value while poti at maximum-position (0 - 4095)
+#define ADC2_MAX         4095        // max ADC2-value while poti at maximum-position (0 - 4095)
 #define ADC2_MULT_NEG  500.0f     // Use 1000.0f to calibrate form MIN to MAX
 #define ADC2_MULT_POS  500.0f     // Use 1000.0f to calibrate form MIN to MAX
 
-#define ADC_OFF_START    0          // Start Value of Area at which other inputs can be active (0 - 4095) Applies to Speed ADC
-#define ADC_OFF_END   1000          // End Value of Area at which other inputs can be active (0 - 4095) Applies to Speed ADC
+#define ADC_OFF_START    2800         // Start Value of Area at which other inputs can be active (0 - 4095) Applies to Speed ADC
+#define ADC_OFF_END   2000          // End Value of Area at which other inputs can be active (0 - 4095) Applies to Speed ADC
 #define ADC_SWITCH_CHANNELS         // define if ADC1 is used for Steer and ADC2 for Speed
 #define ADC_REVERSE_STEER           // define if ADC1 is used for Steer and ADC2 for Speed
 
@@ -115,9 +115,9 @@
 // - speedR and speedL: normal driving -1000 to 1000
 // - weakr and weakl: field weakening for extra boost at high speed (speedR > 700 and speedL > 700). 0 to ~400
 
-#define FILTER              0.1  // lower value == softer filter. do not use values <0.01, you will get float precision issues.
+#define FILTER              0.05  // lower value == softer filter. do not use values <0.01, you will get float precision issues.
 #define SPEED_COEFFICIENT   0.5  // higher value == stronger. 0.0 to ~2.0?
-#define STEER_COEFFICIENT   0.5s  // higher value == stronger. if you do not want any steering, set it to 0.0; 0.0 to 1.0
+#define STEER_COEFFICIENT   -0.2  // higher value == stronger. if you do not want any steering, set it to 0.0; 0.0 to 1.0
 #define INVERT_R_DIRECTION
 #define INVERT_L_DIRECTION
 //             // switch right and left wheel. Watch out, you probably also need to invert directions.

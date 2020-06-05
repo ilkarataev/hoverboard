@@ -52,9 +52,7 @@
 // examples:
 // ack - 02 02 41 BD
 // nack - 02 02 4E B0
-// test - 02 06 54 54 65 73 74 06
-// e.g. for test:
-// 02 - SOM
+// test - 02 06 54 54 65 73 74 06console
 // 06 - length = 6
 // 54 - byte0 - 'cmd' 'T'
 // 54 - byte1 - payload for text command - 'T'est

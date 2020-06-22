@@ -3,8 +3,22 @@ fork from hoverboard-firmware-hack-P-hali
 [BiPropellant Repos](https://github.com/bipropellant)
 
 Это форк проекта документация будет переведен на русский язык.  
-Окзывается процессор GD32f103 тоже можно разблокировать.вот ссылка http://www.rcgroups.com/forums/showpost.php?p=34293596&postcount=1248.Нужно склонировать проект и выполнить первую комманду и потмо все отлично шьется.
-Первое что хочется добавить. Если на плате процессор GDBR то его можно сменить на STM32F103rct6 в корпусе LQFP-64.Также для подключения нужно повесит подтягивающие к Земле резисторы на 100 Ком. Фото есть нужно добавить  
+Окзывается процессор GD32f103 тоже можно разблокировать.вот ссылка http://www.rcgroups.com/forums/showpost.php?p=34293596&postcount=1248.Нужно склонировать проект и выполнить первую комманду и потмо все отлично шьется.  
+
+```
+
+# apt-get install git build-essential gcc-arm-none-eabi libnewlib-arm-none-eabi openocd
+git clone https://github.com/silver13/h8mini-testing
+cd h8mini-testing
+Next you'll want to edit H8mini_test/src/config.h to make any customizations, then build the sources.
+cd gcc
+make
+```
+И выполнить.
+```
+openocd -s /usr/share/openocd/scripts -f /usr/share/openocd/scripts/interface/stlink-v2.cfg -f /usr/share/openocd/scripts/target/stm32f1x.cfg  -c init -c "reset halt" -c "mww 0x40022004 0x45670123" -c "mww 0x40022004 0xCDEF89AB" -c "mww 0x40022008 0x45670123" -c "mww 0x40022008 0xCDEF89AB" -c "mww 0x40022010 0x220" -c "mww 0x40022010 0x260" -c "sleep 100" -c "mww 0x40022010 0x230" -c "mwh 0x1ffff800 0x5AA5" -c "sleep 1000" -c "mww 0x40022010 0x2220" -c "sleep 100" -c "mdw 0x40022010" -c "mdw 0x4002201c" -c "mdw 0x1ffff800" -c shutdown
+```
+Первое что хочется добавить. Если на плате процессор GDBR то его можно сменить на STM32F103rct6 в корпусе LQFP-64.Также для подключения нужно повесит подтягивающие к Земле резисторы на 100 Ком. Фото есть нужно добавить.
 
 Также для работы PPM необходимо занть сколько каналов у вашего передатчика и указать количество каналов в файле config.h в каталоге inc проекта, переменная PPM_NUW_CHANNELS. Например передатчик для передатчика RC6 необходимо было указать 10 каналов. Для прошивки борда нужен программатор stmlinkv2 подключеть его нужно к плате.  
 Страничке прекрасного человека robo durden имя на youtube или на github https://github.com/RoboDurden.  

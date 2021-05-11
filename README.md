@@ -94,7 +94,7 @@ typedef union UART_Packet_t{
   byte UART_Packet[sizeof(MsgToHoverboard_t)];
 };
 
-void setHoverboardPWM( int16_t base_pwm, int16_t steer )
+        void setHoverboardPWM( int16_t base_pwm, int16_t steer )
 {
   UART_Packet_t ups;
 

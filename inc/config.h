@@ -85,14 +85,14 @@
 // ###### CONTROL VIA TWO POTENTIOMETERS ######
 // ADC-calibration to cover the full poti-range: connect potis to left sensor board cable (0 to 3.3V) (do NOT use the red 15V wire in the cable!). see <How to calibrate>. turn the potis to minimum position, write value 1 to ADC1_MIN and value 2 to ADC2_MIN. turn to maximum position and repeat it for ADC?_MAX. make, flash and test it.
 #define CONTROL_ADC               // use ADC as input. disable DEBUG_SERIAL_USART2!
-#define ADC1_MIN         1050        // min ADC1-value while poti at minimum-position (0 - 4095)
-#define ADC1_ZERO     1050        // ADC1-value while poti at zero-position (0 - 4095)
+#define ADC1_MIN      400       // min ADC1-value while poti at minimum-position (0 - 4095)
+#define ADC1_ZERO     400        // ADC1-value while poti at zero-position (0 - 4095)
 #define ADC1_MAX      4095        // max ADC1-value while poti at maximum-position (0 - 4095)
-#define ADC1_MULT_NEG  500.0f     // Use 1000.0f to calibrate form MIN to MAX
-#define ADC1_MULT_POS 1500.0f     // Use 1000.0f to calibrate form MIN to MAX
+#define ADC1_MULT_NEG  300.0f     // Use 1000.0f to calibrate form MIN to MAX
+#define ADC1_MULT_POS  300.0f     // Use 1000.0f to calibrate form MIN to MAX
 
-#define ADC2_MIN         1050        // min ADC2-value while poti at minimum-position (0 - 4095)
-#define ADC2_ZERO     1050        // ADC2-value while poti at zero-position (0 - 4095)
+#define ADC2_MIN      400        // min ADC2-value while poti at minimum-position (0 - 4095)
+#define ADC2_ZERO     400        // ADC2-value while poti at zero-position (0 - 4095)
 #define ADC2_MAX      4095        // max ADC2-value while poti at maximum-position (0 - 4095)
 #define ADC2_MULT_NEG  300.0f     // Use 1000.0f to calibrate form MIN to MAX
 #define ADC2_MULT_POS  300.0f     // Use 1000.0f to calibrate form MIN to MAX
